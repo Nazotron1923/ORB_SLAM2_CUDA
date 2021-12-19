@@ -40,15 +40,21 @@ else()
 endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
+LIST(APPEND CMAKE_INCLUDE_PATH "/usr/local/include")
 
 find_package(OpenCV 4.1.0 REQUIRED)
+find_package(Eigen3 3.3.9 REQUIRED NO_MODULE)
 find_package(Pangolin REQUIRED)
+
+set(EIGEN3_INCLUDE_DIR /usr/include/eigen3/Eigen)
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
+${EIGEN3_INCLUDE_DIR}
 ${PROJECT_SOURCE_DIR}/include
 ${Pangolin_INCLUDE_DIRS}
 )
+
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
@@ -82,8 +88,12 @@ src/cuda/Orb_gpu.cu
 src/cuda/Cuda.cu
 )
 
+
+
+
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
+${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
