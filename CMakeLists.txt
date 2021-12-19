@@ -45,12 +45,9 @@ find_package(OpenCV 4.1.0 REQUIRED)
 find_package(Eigen3 3.3.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 
-set(EIGEN3_INCLUDE_DIR /usr/local/include/eigen3)
-
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/include
-${EIGEN3_INCLUDE_DIR}
 ${Pangolin_INCLUDE_DIRS}
 )
 
