@@ -43,7 +43,7 @@ LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 LIST(APPEND CMAKE_INCLUDE_PATH "/usr/local/include")
 
 find_package(OpenCV 4.1.0 REQUIRED)
-find_package(Eigen3 3.3.9 REQUIRED NO_MODULE)
+find_package(Eigen3 3.3.4 REQUIRED NO_MODULE)
 find_package(Pangolin REQUIRED)
 
 set(EIGEN3_INCLUDE_DIR /usr/include/eigen3/Eigen)
